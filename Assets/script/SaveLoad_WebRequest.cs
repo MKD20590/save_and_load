@@ -27,6 +27,25 @@ public class SaveLoad_WebRequest : MonoBehaviour
         //data dr file github jg bs diakses lewat webrequest
         //tinggal buka filenya (HRS RAW kl di github/text kosongannya tanpa UI github, soalnya yg diliat itu bagian body di html-nya) trus copas linknya ke string url
         //ngambil php ato mysql juga bisa
+
+        //ini buat post
+/*        WWWForm form = new WWWForm();
+        form.AddField("email", data.email);
+        form.AddField("password", data.password);
+        form.AddField("createDate", data.createDate);
+
+        UnityWebRequest request = UnityWebRequest.Post(url, form);
+        yield return request.SendWebRequest();
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError(request.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+        }*/
+
+        // ini buat get
         UnityWebRequest request = UnityWebRequest.Get(url);
 
         yield return request.SendWebRequest(); //buat minta datanya
@@ -54,7 +73,5 @@ public class SaveLoad_WebRequest : MonoBehaviour
         //dijadiin ke material
         meshRenderer.material.mainTexture = texture;
         print(reqTexture.result);
-
-
     }
 }

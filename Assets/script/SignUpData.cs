@@ -3,8 +3,7 @@
 [Serializable]
 public class SignUpData
 {
-    public string username;
+    public string email;
     public string password;
-    public string lastLogin;
-    public int exp;
+    public string createDate;
 }
